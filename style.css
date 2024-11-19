@@ -1,0 +1,155 @@
+#container {
+  width: 65%;
+  height: 65%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0, 5rem;
+  padding: 0, 5rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+
+#container>article {
+  width: 20rem;
+  height: 39rem;
+  border: solid gray 1px;
+  border-radius: 10px;
+  margin: 0.5rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  background-color: #000;
+  color: #fff;
+}
+
+#container>article img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 0.5rem;
+}
+
+#container>article h1 {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+  font-family: sans-serif;
+  color: #fff;
+}
+
+#container>article button {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  margin-top: auto;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#container>article button:hover {
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+
+#login {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  height: 300px;
+  margin: 200px auto;
+  text-align: center;
+}
+
+#area-login {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 300px;
+  height: 200px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+#area-login h2 {
+  color: #000;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#area-login form {
+  margin-top: 20px;
+}
+
+#area-login input {
+  width: 100%;
+  height: 40px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+#area-login input:focus {
+  border-color: #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#area-login button {
+  width: 100%;
+  height: 40px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+#area-login button:hover {
+  background-color: #333;
+}
+
+#botoes-topo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  background-color: #000;
+  color: #fff;
+}
+
+#botoes-topo h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+#botoes-topo button {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#botoes-topo button:hover {
+  background-color: #333;
+  color: #fff;
+}
