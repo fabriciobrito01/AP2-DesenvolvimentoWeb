@@ -1,12 +1,23 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body.detalhes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #ffffff;
+}
+
 #container {
-  width: 65%;
-  height: 65%;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 0, 5rem;
-  padding: 0, 5rem;
-  margin-left: 2rem;
-  margin-right: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
 }
 
 #container>article {
@@ -117,6 +128,7 @@
   color: #fff;
   border: none;
   border-radius: 5px;
+  gap: 1rem;
   padding: 0.5rem 1rem;
   margin-top: auto;
   font-size: 0.8rem;
@@ -174,12 +186,17 @@ header div {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: auto 10;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
 }
 
 #botoes-topo {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 1rem;
   width: 100%;
   margin-top: 2rem;
@@ -205,15 +222,13 @@ header div {
 #barra-pesquisa {
   display: flex;
   justify-content: center;
-  /* Centraliza a barra de pesquisa */
+  align-items: center;
   width: 100%;
   margin-top: 2rem;
-  /* Espaço entre os botões e a barra de pesquisa */
 }
 
 #barra-pesquisa input {
   width: 20%;
-  /* Define a largura da caixa de pesquisa */
   padding: 0.5rem;
   font-size: 1rem;
   border-radius: 5px;
@@ -221,62 +236,46 @@ header div {
 }
 
 .container {
+  max-height: 768px;
+  max-width: 80%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-color: #000;
-  color: #fff;
-  padding: 0.5rem;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  background-color: #111;
+  padding: 1rem;
+  border-radius: 10px;
   box-sizing: border-box;
 }
 
 .imagem-jogador {
-  height: 50%;
-  margin-top: 0rem;
+  height: auto;
+  max-width: 50%;
+  border-radius: 10px;
 }
 
 .informacoes-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   gap: 1rem;
-  width: 40%;
-  margin-top: 1rem;
+  width: 100%;
+  margin-left: 2rem;
   font-family: oswald, sans-serif;
-}
-
-.nascimento-centralizado {
-  grid-column: span 2;
-  text-align: center;
-  background-color: #333;
-  color: #fff;
-  padding: 1rem;
-  border-radius: 10px;
 }
 
 .info-box {
-  background-color: #444444;
   color: #ffffff;
   padding: 1rem;
   border-radius: 10px;
-  text-align: center;
-  transition: background-color 0.3s;
-}
+  text-align: left;
 
-.detalhes-jogador {
-  margin-top: 1rem;
-  font-size: 1.2rem;
-  text-align: center;
-  width: 100%;
-  max-width: 800px;
-  color: #fff;
-  padding: 1rem;
-  font-family: oswald, sans-serif;
-  font-size: medium;
+  border-bottom: 1px solid #ccc;
 }
 
 .botao-voltar {
+  align-self: center;
+  margin-top: 1rem;
   background-color: #fff;
   color: #000;
   border: none;
@@ -291,4 +290,44 @@ header div {
   background-color: #000;
   color: #fff;
   border: 1px solid #fff;
+}
+
+@media (max-width: 768px) {
+  #container {
+    display: grid;
+    grid-template-columns: repeat(1fr);
+    gap: 1rem;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  #container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1300px) {
+  #container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1301px) {
+  #container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    max-width: 100%;
+    margin: 0 auto;
+  }
 }

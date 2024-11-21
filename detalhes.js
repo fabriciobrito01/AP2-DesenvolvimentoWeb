@@ -55,6 +55,7 @@ const montaPagina = (dados) => {
     };
 
     // Adicionando informações ao container
+    informacoesContainer.appendChild(criaInfoBox('📝 Detalhes', dados.detalhes));
     informacoesContainer.appendChild(criaInfoBox("⚽️ Número de jogos", dados.n_jogos));
     informacoesContainer.appendChild(criaInfoBox("🚻 Elenco", dados.elenco.toLowerCase() === "masculino" ? "Masculino" : "Feminino"));
     informacoesContainer.appendChild(criaInfoBox("🗓️ No time desde", dados.no_botafogo_desde));
@@ -63,25 +64,18 @@ const montaPagina = (dados) => {
     informacoesContainer.appendChild(criaInfoBox("📌 Naturalidade", dados.naturalidade));
     informacoesContainer.appendChild(criaInfoBox("👶 Nascimento", dados.nascimento, "nascimento-centralizado"));
 
-    // Adicionando as informações ao container principal
-    container.appendChild(informacoesContainer);
-
-    // Criando e adicionando o detalhe do jogador, que fica abaixo das outras informações
-    const detalhes = document.createElement("p");
-    detalhes.classList.add("detalhes-jogador");
-    detalhes.innerHTML = dados.detalhes;
-    container.appendChild(detalhes);
-
-    // Adicionando o botão de voltar
+    // Criando e adicionando o botão ao container de informações
     const botao = document.createElement("button");
     botao.classList.add("botao-voltar");
     botao.innerText = "Voltar";
     botao.onclick = () => {
         const ultimaOrigem = localStorage.getItem("ultimaOrigem") || "index.html";
-        console.log("Redirecionando para:", ultimaOrigem); // Log para depuração
         window.location.href = ultimaOrigem;
     };
-    container.appendChild(botao);
+    informacoesContainer.appendChild(botao); // Botão como último item do container
+
+    // Adicionando as informações ao container principal
+    container.appendChild(informacoesContainer);
 
     // Adicionando o container ao corpo da página
     body.appendChild(container);
@@ -96,3 +90,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         document.body.innerHTML = "<h1>Você precisa estar logado para ter acesso.</h1>";
     }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.body.classList.add("detalhes");
+});  
