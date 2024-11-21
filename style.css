@@ -9,7 +9,6 @@
   margin-right: 2rem;
 }
 
-
 #container>article {
   width: 20rem;
   height: 39rem;
@@ -108,19 +107,21 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#area-login button {
-  width: 100%;
-  height: 40px;
-  background-color: #000;
+#botao-entrar {
+  background-color: #000000;
   color: #fff;
   border: none;
   border-radius: 5px;
-  font-size: 18px;
+  padding: 0.5rem 1rem;
+  margin-top: auto;
+  font-size: 0.8rem;
   cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
 }
 
-#area-login button:hover {
-  background-color: #333;
+#botao-entrar:hover {
+  background-color: #9b9b9b;
+  color: #2b2b2b;
 }
 
 #botoes-topo {
@@ -151,5 +152,103 @@
 
 #botoes-topo button:hover {
   background-color: #333;
+  color: #fff;
+}
+
+/* Container principal */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  /* Faz o conteúdo ocupar toda a altura da tela */
+  background-color: #000;
+  /* Fundo preto */
+  color: #fff;
+  padding: 0.5rem;
+}
+
+.imagem-jogador {
+  height: 50%;
+  margin-top: 0rem;
+}
+
+/* Ajusta a estrutura do container para as duas colunas */
+.informacoes-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* Duas colunas */
+  gap: 1rem;
+  width: 40%;
+  margin-top: 1rem;
+}
+
+/* Garante que a informação de nascimento ocupe as duas colunas e fique centralizada */
+.nascimento-centralizado {
+  grid-column: span 2;
+  /* Faz com que ocupe as duas colunas */
+  text-align: center;
+  /* Texto centralizado */
+  background-color: #333;
+  /* Fundo escuro */
+  color: #fff;
+  /* Cor do texto */
+  padding: 1rem;
+  /* Espaçamento interno */
+  border-radius: 10px;
+  /* Bordas arredondadas */
+}
+
+
+/* Caixa de informação do jogador */
+.info-box {
+  background-color: #d8d8d8;
+  /* Fundo das caixas */
+  color: #131313;
+  padding: 1rem;
+  border-radius: 10px;
+  /* Bordas arredondadas */
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Efeito de hover nas caixas de informações */
+.info-box:hover {
+  background-color: #adadad;
+  /* Altera a cor de fundo quando o mouse passa por cima */
+}
+
+/* Estilo específico para o detalhe do jogador */
+.detalhes-jogador {
+  margin-top: 1rem;
+  /* Espaço acima */
+  font-size: 1.2rem;
+  /* Tamanho de fonte ajustado */
+  text-align: center;
+  /* Texto centralizado */
+  width: 100%;
+  /* Largura completa */
+  max-width: 800px;
+  /* Limita a largura para não ficar muito largo */
+  color: #fff;
+  /* Cor do texto */
+  padding: 1rem;
+}
+
+/* Botão de voltar */
+.botao-voltar {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  border-radius: 5px;
+}
+
+.botao-voltar:hover {
+  background-color: #adadad;
   color: #fff;
 }
