@@ -60,11 +60,7 @@ const montaPagina = (dados) => {
     informacoesContainer.appendChild(criaInfoBox("No time desde", dados.no_botafogo_desde));
     informacoesContainer.appendChild(criaInfoBox("Posição", dados.posicao));
     informacoesContainer.appendChild(criaInfoBox("Altura", dados.altura));
-
-    // A "Naturalidade" permanece com o layout padrão sem centralização
     informacoesContainer.appendChild(criaInfoBox("Naturalidade", dados.naturalidade));
-
-    // Aqui aplicamos a classe específica para a data de nascimento
     informacoesContainer.appendChild(criaInfoBox("Nascimento", dados.nascimento, "nascimento-centralizado"));
 
     // Adicionando as informações ao container principal

@@ -9,6 +9,9 @@
     <script src="botafeminino.js"></script>
     <script src="md5-min.js"></script>
     <script src="codigo.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -23,14 +26,24 @@
             <p>A senha para login é: <b>botafogo123</b></p>
         </div>
     </div>
-    <div id="botoes-topo" style="display: none;">
-        <h2>Times</h2>
-        <div>
-            <button id="botao1">Ambos</button>
-            <button id="botao2">Masculino</button>
-            <button id="botao3">Feminino</button>
+    <header>
+        <h2>Botafogo <br>
+            Atletas ★</h2>
+        <div id="logout">
+            <button id="botao-logout">Logout</button>
         </div>
+    </header>
+
+    <div id="botoes-topo">
+        <button id="botao1">Ambos</button>
+        <button id="botao2">Masculino</button>
+        <button id="botao3">Feminino</button>
     </div>
+
+    <div id="barra-pesquisa">
+        <input type="text" id="campo-pesquisa" placeholder="Buscar jogador..." />
+    </div>
+
     <div id="secao-jogadores">
         <div id="container"></div>
     </div>
