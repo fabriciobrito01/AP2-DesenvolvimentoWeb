@@ -170,6 +170,13 @@ header div {
   gap: 0.5rem;
 }
 
+#filtros {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto 10;
+}
+
 #botoes-topo {
   display: flex;
   justify-content: center;
