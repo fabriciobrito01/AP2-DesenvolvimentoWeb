@@ -76,7 +76,7 @@ body.detalhes {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   width: 300px;
-  height: 300px;
+  height: 400px;
   margin: 200px auto;
   text-align: center;
 }
@@ -130,15 +130,16 @@ body.detalhes {
   border-radius: 5px;
   gap: 1rem;
   padding: 0.5rem 1rem;
-  margin-top: auto;
+  margin-top: 1.5rem;
   font-size: 0.8rem;
   cursor: pointer;
   transition: background-color 0.3s, color 0.3s;
 }
 
 #botao-entrar:hover {
-  background-color: #9b9b9b;
-  color: #2b2b2b;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
 }
 
 #botao-logout {
