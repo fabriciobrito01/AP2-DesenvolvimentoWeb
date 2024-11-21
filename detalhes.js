@@ -55,13 +55,13 @@ const montaPagina = (dados) => {
     };
 
     // Adicionando informações ao container
-    informacoesContainer.appendChild(criaInfoBox("Número de jogos", dados.n_jogos));
-    informacoesContainer.appendChild(criaInfoBox("Elenco", dados.elenco.toLowerCase() === "masculino" ? "Masculino" : "Feminino"));
-    informacoesContainer.appendChild(criaInfoBox("No time desde", dados.no_botafogo_desde));
-    informacoesContainer.appendChild(criaInfoBox("Posição", dados.posicao));
-    informacoesContainer.appendChild(criaInfoBox("Altura", dados.altura));
-    informacoesContainer.appendChild(criaInfoBox("Naturalidade", dados.naturalidade));
-    informacoesContainer.appendChild(criaInfoBox("Nascimento", dados.nascimento, "nascimento-centralizado"));
+    informacoesContainer.appendChild(criaInfoBox("⚽️ Número de jogos", dados.n_jogos));
+    informacoesContainer.appendChild(criaInfoBox("🚻 Elenco", dados.elenco.toLowerCase() === "masculino" ? "Masculino" : "Feminino"));
+    informacoesContainer.appendChild(criaInfoBox("🗓️ No time desde", dados.no_botafogo_desde));
+    informacoesContainer.appendChild(criaInfoBox("🔢 Posição", dados.posicao));
+    informacoesContainer.appendChild(criaInfoBox("📏 Altura", dados.altura));
+    informacoesContainer.appendChild(criaInfoBox("📌 Naturalidade", dados.naturalidade));
+    informacoesContainer.appendChild(criaInfoBox("👶 Nascimento", dados.nascimento, "nascimento-centralizado"));
 
     // Adicionando as informações ao container principal
     container.appendChild(informacoesContainer);
