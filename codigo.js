@@ -116,16 +116,30 @@ const carregarFeminino = () => {
 const femininoBtn = document.getElementById("botao3");
 femininoBtn.addEventListener("click", carregarFeminino);
 
-// Cria uma mensagem de erro no console caso os jogadores não sejam carregados
+// Cria uma mensagem de erro no console caso os jogadores não foram carregados
 try { carregarAll(), carregarFeminino(), carregarMasculino(); } catch (err) {
     console.error("Erro ao carregar jogadores:", err);
 }
 
 // Função para manipular o botão de login
-const manipulaBotao = () => {
+const gerarHashSHA256 = async (texto) => {
+    const encoder = new TextEncoder();
+    const data = encoder.encode(texto);
+
+    const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const hashHex = hashArray.map((b) => b.toString(16).padStart(2, "0")).join("");
+
+    return hashHex;
+};
+
+const manipulaBotao = async () => {
     const texto = document.getElementById("senha").value;
 
-    if (hex_md5(texto) === "b78d300d15057992b03e23fcea44ab7d") {
+    const hash = await gerarHashSHA256(texto);
+
+    if (hash === "6e4c3638183a28ef0fedd83c114bbace5055d24a6bd214f765a5f7fde58a9f86") {
         localStorage.setItem("logado", "sim");
         verificaLogin();
     } else {
