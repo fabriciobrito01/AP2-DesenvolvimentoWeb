@@ -89,8 +89,6 @@ const carregarAll = () => {
         });
     });
 }
-
-// Evento de clique no botão "Ambos"
 const allBtn = document.getElementById("botao1");
 allBtn.addEventListener("click", carregarAll);
 
@@ -103,8 +101,6 @@ const carregarMasculino = () => {
         });
     });
 };
-
-// Evento de clique no botão "Masculino"
 const masculinoBtn = document.getElementById("botao2");
 masculinoBtn.addEventListener("click", carregarMasculino);
 
@@ -117,8 +113,6 @@ const carregarFeminino = () => {
         });
     });
 };
-
-// Evento de clique no botão "Feminino"
 const femininoBtn = document.getElementById("botao3");
 femininoBtn.addEventListener("click", carregarFeminino);
 
@@ -133,11 +127,10 @@ const manipulaBotao = () => {
         alert("Senha Incorreta!");
     }
 };
-
 document.getElementById("botao-entrar").onclick = manipulaBotao;
 document.getElementById("senha").addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
-        manipulaBotao(); // Chama a função de login ao pressionar Enter
+        manipulaBotao();
     }
 });
 
@@ -162,8 +155,6 @@ const carregarPorDropdown = (event) => {
         carregarFeminino();
     }
 };
-
-// Adiciona evento de mudança ao dropdown
 document.getElementById("menu-dropdown").addEventListener("change", carregarPorDropdown);
 
 // Função para filtrar jogadores na barra de pesquisa
@@ -174,12 +165,10 @@ const filtrarJogadores = () => {
     cartoes.forEach((cartao) => {
         const nome = cartao.querySelector("h1").textContent.toLowerCase();
         if (nome.includes(pesquisa)) {
-            cartao.style.display = "block"; // Mostra o cartão
+            cartao.style.display = "block";
         } else {
-            cartao.style.display = "none"; // Esconde o cartão
+            cartao.style.display = "none";
         }
     });
 };
-
-// Adiciona evento à barra de pesquisa
 document.getElementById("campo-pesquisa").addEventListener("input", filtrarJogadores);
