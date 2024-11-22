@@ -354,7 +354,7 @@ header div {
     display: grid;
     grid-template-columns: repeat(1fr);
     gap: 1rem;
-    max-width: 100%;
+    max-width: 50%;
     margin: 0 auto;
   }
 }
