@@ -20,7 +20,7 @@ const montaPagina = (dados) => {
     }
 
     const body = document.body;
-    body.innerHTML = ""; // Limpa a página
+    body.innerHTML = "";
 
     // Criando o container principal
     const container = document.createElement("div");
@@ -45,9 +45,9 @@ const montaPagina = (dados) => {
 
         // Verifica se a classeExtra está definida antes de adicionar
         if (classeExtra) {
-            infoBox.classList.add("info-box", classeExtra); // Adiciona a classe extra se não estiver vazia
+            infoBox.classList.add("info-box", classeExtra);
         } else {
-            infoBox.classList.add("info-box"); // Caso contrário, apenas adiciona a classe base
+            infoBox.classList.add("info-box");
         }
 
         infoBox.innerHTML = `<strong>${label}</strong>: ${valor}`;
@@ -73,7 +73,7 @@ const montaPagina = (dados) => {
         const ultimaOrigem = localStorage.getItem("ultimaOrigem") || "index.html";
         window.location.href = ultimaOrigem;
     };
-    informacoesContainer.appendChild(botao); // Botão como último item do container
+    informacoesContainer.appendChild(botao);
 
     // Adicionando as informações ao container principal
     container.appendChild(informacoesContainer);

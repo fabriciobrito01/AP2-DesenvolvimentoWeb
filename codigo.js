@@ -15,7 +15,7 @@ const manipulaClick = (e) => {
     const id = e.currentTarget.dataset.id;
     const mascDetalhes = `detalhes.html?id=${id}`;
     const fem = `detalhes.html?id=${id}`;
-    localStorage.setItem("ultimaOrigem", "index.html"); // Salva a origem como área de cards
+    localStorage.setItem("ultimaOrigem", "index.html");
     window.location.href = mascDetalhes;
     window.location.href = fem;
 };
@@ -33,7 +33,7 @@ const montaCard = (atleta) => {
 
     // Adiciona a imagem
     const imagem = document.createElement("img");
-    imagem.src = atleta.imagem || "imagem-padrao.jpg"; // Imagem padrão, se necessário
+    imagem.src = atleta.imagem || "imagem-padrao.jpg";
     imagem.alt = `Imagem de ${atleta.nome}`;
     cartao.appendChild(imagem);
 
@@ -45,7 +45,7 @@ const montaCard = (atleta) => {
     // Adiciona o botão "Saiba Mais"
     const botao = document.createElement("button");
     botao.textContent = "Saiba Mais";
-    botao.onclick = () => manipulaClick({ currentTarget: cartao }); // Simula o clique no card
+    botao.onclick = () => manipulaClick({ currentTarget: cartao });
     cartao.appendChild(botao);
 
     // Define os atributos para manipulação posterior
@@ -68,7 +68,7 @@ const verificaLogin = () => {
         logout.style.display = "block";
         barraPesquisa.style.display = "block";
 
-        container.innerHTML = ""; // Limpa os cards anteriores
+        container.innerHTML = "";
 
     } else {
         login.style.display = "block";
@@ -83,9 +83,9 @@ const verificaLogin = () => {
 // Função para carregar os dois elencos
 const carregarAll = () => {
     pega_json(`${masc}all`).then((dados) => {
-        container.innerHTML = ""; // Limpa os cards anteriores
+        container.innerHTML = "";
         dados.forEach((atleta) => {
-            container.appendChild(montaCard(atleta)); // Adiciona os cards dos atletas masculinos
+            container.appendChild(montaCard(atleta));
         });
     });
 }
@@ -122,7 +122,6 @@ const carregarFeminino = () => {
 const femininoBtn = document.getElementById("botao3");
 femininoBtn.addEventListener("click", carregarFeminino);
 
-
 // Função para manipular o botão de login
 const manipulaBotao = () => {
     const texto = document.getElementById("senha").value;
@@ -136,7 +135,6 @@ const manipulaBotao = () => {
 };
 
 document.getElementById("botao-entrar").onclick = manipulaBotao;
-
 
 // Função de logout
 document.getElementById("logout").onclick = () => {
