@@ -116,6 +116,11 @@ const carregarFeminino = () => {
 const femininoBtn = document.getElementById("botao3");
 femininoBtn.addEventListener("click", carregarFeminino);
 
+// Cria uma mensagem de erro no console caso os jogadores não sejam carregados
+try { carregarAll(), carregarFeminino(), carregarMasculino(); } catch (err) {
+    console.error("Erro ao carregar jogadores:", err);
+}
+
 // Função para manipular o botão de login
 const manipulaBotao = () => {
     const texto = document.getElementById("senha").value;
