@@ -145,6 +145,22 @@ document.getElementById("logout").onclick = () => {
 // Verifica login ao carregar a página
 document.addEventListener("DOMContentLoaded", verificaLogin);
 
+// Função para carregar jogadores com base na seleção do dropdown
+const carregarPorDropdown = (event) => {
+    const valorSelecionado = event.target.value;
+
+    if (valorSelecionado === "all") {
+        carregarAll();
+    } else if (valorSelecionado === "masculino") {
+        carregarMasculino();
+    } else if (valorSelecionado === "feminino") {
+        carregarFeminino();
+    }
+};
+
+// Adiciona evento de mudança ao dropdown
+document.getElementById("menu-dropdown").addEventListener("change", carregarPorDropdown);
+
 // Função para filtrar jogadores na barra de pesquisa
 const filtrarJogadores = () => {
     const pesquisa = document.getElementById("campo-pesquisa").value.toLowerCase();

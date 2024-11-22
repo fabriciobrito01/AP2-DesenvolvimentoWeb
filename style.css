@@ -195,6 +195,87 @@ header div {
   text-align: center;
 }
 
+#dropdown label {
+  color: #000000;
+  /* Cor do texto do rótulo */
+  font-family: fantasy;
+  font-size: 1.3rem;
+  /* Tamanho da fonte do rótulo */
+  margin-bottom: 0.5rem;
+  /* Espaçamento abaixo do rótulo */
+  display: block;
+  /* Faz o rótulo ocupar toda a largura disponível */
+  text-align: center;
+  /* Centraliza o texto do rótulo */
+}
+
+#menu-dropdown {
+  background-color: #000;
+  /* Fundo preto igual aos botões */
+  color: #fff;
+  /* Texto branco igual aos botões */
+  border: none;
+  /* Remover borda padrão */
+  border-radius: 5px;
+  /* Borda arredondada igual aos botões */
+  padding: 0.5rem 1rem;
+  /* Espaçamento interno */
+  font-size: 1rem;
+  /* Tamanho da fonte */
+  cursor: pointer;
+  /* Cursor de ponteiro ao passar o mouse */
+  transition: background-color 0.3s, color 0.3s;
+  /* Transição suave */
+}
+
+/* Estilo para o dropdown quando está em foco */
+#menu-dropdown:focus {
+  outline: none;
+  /* Remover contorno padrão */
+  border: 1px solid #fff;
+  /* Borda branca ao focar */
+}
+
+/* Estilo para as opções do dropdown */
+#menu-dropdown option {
+  background-color: #000;
+  /* Fundo preto para opções */
+  color: #fff;
+  /* Texto branco para opções */
+}
+
+/* Estilo para o hover nas opções do dropdown */
+#menu-dropdown option:hover {
+  background-color: #fff;
+  /* Fundo branco ao passar o mouse */
+  color: #000;
+  /* Texto preto ao passar o mouse */
+}
+
+#dropdown {
+  display: none;
+  /* Ocultar o dropdown por padrão */
+}
+
+@media (max-width: 768px) {
+  #botoes {
+    display: none;
+    /* Ocultar os botões em telas menores */
+  }
+
+  #dropdown {
+    display: block;
+    /* Mostrar o dropdown em telas menores */
+  }
+}
+
+@media (min-width: 769px) {
+  #dropdown {
+    display: none;
+    /* Ocultar o dropdown em telas maiores */
+  }
+}
+
 #botoes-topo {
   display: flex;
   justify-content: center;
