@@ -135,6 +135,11 @@ const manipulaBotao = () => {
 };
 
 document.getElementById("botao-entrar").onclick = manipulaBotao;
+document.getElementById("senha").addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        manipulaBotao(); // Chama a função de login ao pressionar Enter
+    }
+});
 
 // Função de logout
 document.getElementById("logout").onclick = () => {
