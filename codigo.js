@@ -1,5 +1,6 @@
-const url = "https://botafogo-atletas.mange.li/2024-1/";
-const woman = "./botafeminino.js";
+const masc = "https://botafogo-atletas.mange.li/2024-1/";
+const fem = "https://botafogo-atletas.mange.li/2024-1/feminino";
+const all = "https://botafogo-atletas.mange.li/2024-1/all";
 
 const container = document.getElementById("container");
 const login = document.getElementById("login");
@@ -12,14 +13,14 @@ const barraPesquisa = document.getElementById("barra-pesquisa");
 // Função para manipular o clique no card
 const manipulaClick = (e) => {
     const id = e.currentTarget.dataset.id;
-    const urlDetalhes = `detalhes.html?id=${id}`;
-    const woman = `detalhes.html?id=${id}`;
+    const mascDetalhes = `detalhes.html?id=${id}`;
+    const fem = `detalhes.html?id=${id}`;
     localStorage.setItem("ultimaOrigem", "index.html"); // Salva a origem como área de cards
-    window.location.href = urlDetalhes;
-    window.location.href = woman;
+    window.location.href = mascDetalhes;
+    window.location.href = fem;
 };
 
-// Função para pegar dados JSON de uma URL
+// Função para pegar dados JSON de uma masc
 const pega_json = async (caminho) => {
     const resposta = await fetch(caminho);
     const dados = await resposta.json();
@@ -79,34 +80,26 @@ const verificaLogin = () => {
     }
 };
 
-// Função para carregar ambos os elencos
-const carregarAmbos = async () => {
-    container.innerHTML = ""; // Limpa os cards anteriores
-
-    // Carregar elenco masculino
-    const masculino = await pega_json(`${url}masculino`);
-    masculino.forEach((atleta) => {
-        container.appendChild(montaCard(atleta)); // Adiciona os cards masculinos
-    });
-
-    // Carregar elenco feminino
-    const feminino = await pega_json(`${url}feminino`);
-    feminino.forEach((atleta) => {
-        container.appendChild(montaCard(atleta)); // Adiciona os cards femininos
-    });
-};
-
-// Evento de clique no botão "Ambos"
-const ambosBtn = document.getElementById("botao1");
-ambosBtn.addEventListener("click", carregarAmbos);
-
-
-// Função para carregar jogadores masculinos
-const carregarMasculino = () => {
-    pega_json(`${url}masculino`).then((dados) => {
+// Função para carregar os dois elencos
+const carregarAll = () => {
+    pega_json(`${masc}all`).then((dados) => {
         container.innerHTML = ""; // Limpa os cards anteriores
         dados.forEach((atleta) => {
             container.appendChild(montaCard(atleta)); // Adiciona os cards dos atletas masculinos
+        });
+    });
+}
+
+// Evento de clique no botão "Ambos"
+const allBtn = document.getElementById("botao1");
+allBtn.addEventListener("click", carregarAll);
+
+// Função para carregar jogadores masculinos
+const carregarMasculino = () => {
+    pega_json(`${masc}masculino`).then((dados) => {
+        container.innerHTML = "";
+        dados.forEach((atleta) => {
+            container.appendChild(montaCard(atleta));
         });
     });
 };
@@ -117,10 +110,10 @@ masculinoBtn.addEventListener("click", carregarMasculino);
 
 // Função para carregar jogadoras femininas
 const carregarFeminino = () => {
-    pega_json(`${url}feminino`).then((dados) => {
-        container.innerHTML = ""; // Limpa os cards anteriores
+    pega_json(`${masc}feminino`).then((dados) => {
+        container.innerHTML = "";
         dados.forEach((atleta) => {
-            container.appendChild(montaCard(atleta)); // Adiciona os cards das atletas femininas
+            container.appendChild(montaCard(atleta));
         });
     });
 };
@@ -143,6 +136,7 @@ const manipulaBotao = () => {
 };
 
 document.getElementById("botao-entrar").onclick = manipulaBotao;
+
 
 // Função de logout
 document.getElementById("logout").onclick = () => {
