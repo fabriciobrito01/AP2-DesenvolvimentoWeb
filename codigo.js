@@ -144,3 +144,21 @@ document.getElementById("logout").onclick = () => {
 
 // Verifica login ao carregar a página
 document.addEventListener("DOMContentLoaded", verificaLogin);
+
+// Função para filtrar jogadores na barra de pesquisa
+const filtrarJogadores = () => {
+    const pesquisa = document.getElementById("campo-pesquisa").value.toLowerCase();
+    const cartoes = container.querySelectorAll("article");
+
+    cartoes.forEach((cartao) => {
+        const nome = cartao.querySelector("h1").textContent.toLowerCase();
+        if (nome.includes(pesquisa)) {
+            cartao.style.display = "block"; // Mostra o cartão
+        } else {
+            cartao.style.display = "none"; // Esconde o cartão
+        }
+    });
+};
+
+// Adiciona evento à barra de pesquisa
+document.getElementById("campo-pesquisa").addEventListener("input", filtrarJogadores);
